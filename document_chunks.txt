@@ -1,0 +1,61 @@
+Co-processing biogenic feedstocks within petroleum refineries can produce lower-carbon-intensity diesel and aviation fuels, but presents operational challenges. Strategies to mitigate these challenges include pretreating feedstocks, infrastructure modifications, and using different feedstocks or refinery insertion points. Despite limited information, co-processing has potential to reduce carbon intensities of refineries and transportation fuels.
+Thermochemical liquefaction technologies convert biomass into liquid intermediates that can be upgraded to finished fuels like renewable diesel and SAF/biojet fuels. Co-processing these biogenic feedstocks with fossil-derived crudes can produce lower-carbon intensive transportation fuels, leveraging existing refining infrastructure.
+Biocrudes from different sources have varying TAN levels, aromatic content, and nitrogen content, affecting their stability, processing, and co-processing in refineries, and requiring adjustments to hydrotreatment and hydrogen consumption.
+Feedstocks for co-processing are lipids and biocrudes, which have distinct characteristics that impact co-processing. Lipids are globally available, have a high oxygen content, and require upgrading to remove oxygen and saturate double bonds. Biocrudes, available in limited quantities, have variable chemistry, high viscosity, and poor miscibility with fossil feeds, requiring modifications to co-processing.
+The fluid catalytic cracking (FCC) unit is used to crack heavy molecules, producing gasoline and propylene, and is a lower-risk option for refineries as it doesn't require external hydrogen and can tolerate higher oxygen levels in biofeeds. Hydrotreaters remove heteroatoms from product streams, including oxygen from co-processing blends, and are used to make diesel. Hydrocracking is a more severe process that breaks carbon-carbon bonds, increasing middle distillate production. Biocrudes may require cracking for middle distillate production, and pretreatments such as esterification and mild hydrotreatment can be used to stabilize biocrudes before co-processing.
+Biogenic feedstocks contain high levels of oxygen (5-50%) in the form of various chemical functional groups, which can promote unwanted chemical reactions during co-processing. Oxygen removal is necessary and can be achieved through hydrotreatment, which increases hydrogen demand. Pretreatment is also required to remove contaminants such as alkali metals, chlorides, and phosphorous that can deactivate catalysts. Deoxygenation of biocrudes can be achieved through hydrodeoxygenation, decarboxylation, and decarbonylation reactions.
+Hydrodeoxygenation, decarboxylation, and decarbonylation are three oxygen removal reactions that occur simultaneously in processing units, with varying ratios depending on conditions. Hydrodeoxygenation removes oxygen as water, while decarboxylation and decarbonylation remove oxygen as carbon dioxide and carbon monoxide, respectively, with potential losses of carbon and hydrocarbon yield.
+Biocrude deoxygenation involves various reactions, including decarbonylation, decarboxylation, and hydrodeoxygenation, which can be affected by side reactions like water-gas shift and methanation. These reactions can generate heat, causing operational issues like local overheating and catalyst damage. A modified hydrotreater design with multiple catalyst beds and quenching injections can help mitigate these problems.
+Biogenic feedstocks have varying oxygen levels, but most refineries co-processing lipids use low blending levels (5-10%) with minimal adjustments. Higher lipid blends (30%) require extensive refinery modifications, resulting in increased CO, CO2, H2O, and temperatures in the hydrotreater.
+Here's a detailed description of the image:
+
+The image features a detailed, vintage-style illustration above the word "ELSEVIER" in a golden-orange color.
+
+The illustration depicts a tree with dense foliage and a complex network of branches. A figure, possibly a monk or scholar, stands to the right of the tree, partially obscured by its trunk. The figure is wearing a robe and appears to be holding something. A snake is coiled around the tree trunk.
+
+A banner or ribbon is draped across the tree branches on the left side, bearing the text "NON SOLUS."
+
+The ground beneath the tree is textured with grass and foliage. The overall style of the illustration is reminiscent of woodcut or engraving techniques. The word "ELSEVIER" is written in a bold, sans-serif font.
+Here's a detailed description of the image:
+
+The image is a cover of a journal titled "FUEL." The background color is a solid orange.
+
+At the top left corner, there's a small logo, which is difficult to discern in detail due to its size.
+
+The word "FUEL" is prominently displayed in large, bold, white letters with a black outline. The letters are slightly angled, giving a sense of depth.
+
+Below "FUEL," in a smaller, light-blue font, is the tagline: "the science and technology of Fuel and Energy."
+
+At the top right corner, the ISSN number "ISSN 0016-2361" is printed in a small, black font.
+
+At the bottom left corner, there's some smaller text, including "AVAILABLE ONLINE AT WWW.SCIENCEDIRECT.COM" and below that, the word "ScienceDirect" in a larger font.
+Here's a detailed description of the image:
+
+The image is a square button with a light gray gradient background, giving it a slightly raised or 3D appearance. The button contains two main elements:
+
+1.  **Icon:** At the top of the button is a circular icon. The icon consists of a blue circle with a yellow segment at the bottom left. Inside the circle is a red bookmark-like shape.
+
+2.  **Text:** Below the icon, in the lower half of the button, is the text "Check for updates" written in a dark gray, sans-serif font. The text is centered horizontally within the button.
+The image presents three chemical reactions, each numbered and labeled with a reaction type.
+
+(1) The first reaction, labeled "Decarbonylation," shows a molecule with a carboxylic acid group (COOH) and an "R" group attached to the carbon two positions away from the carbonyl carbon. This molecule reacts to form an alkene with the "R" group attached, carbon monoxide (CO), and water (H2O). The reaction is represented as:
+HO
+O
+R → R + CO + H2O
+
+(2) The second reaction, labeled "Decarboxylation," starts with the same initial molecule as in reaction (1). This molecule reacts to form an alkane with the "R" group attached and carbon dioxide (CO2). The reaction is represented as:
+HO
+O
+R → R + CO2
+
+(3) The third reaction, labeled "Hydrodeoxygenation," also starts with the same initial molecule as in reactions (1) and (2). This molecule reacts with hydrogen (+ H2) to form an alkane with the "R" group attached and two water molecules (2H2O). The reaction is represented as:
+HO
+O
+R + H2 → R + 2H2O
+
+In each reaction, the starting molecule is a carboxylic acid with a generic "R" group attached. The reactions are depicted with arrows indicating the transformation from reactants to products. The numbers (1), (2), and (3) are enclosed in parentheses and are located to the left of each reaction.
+The image is a schematic diagram of a hydrotreating process. The diagram is drawn with black lines on a light beige background.
+
+The process begins with "LGO Feed" entering from the left. This feed flows into a "Heat exchanger," represented by a circle with an "M" inside. From the heat exchanger, one stream goes to a "Fired heater," depicted as a red, stylized furnace. The heated stream then flows into the top of a "Hydrotreating reactor with four catalyst beds." The reactor is shown as a tall, cylindrical vessel with four sections, each containing a green cross-hatched pattern representing the catalyst beds. The label "RTD" points to the top of the reactor, and a line connects the top of the reactor to "Make-up + recycle H₂" at the top right of the image.
+
+From the bottom of the reactor, the product stream flows into a "Hot separator," represented by a green rectangle. Two streams exit the hot separator: one labeled "To amine unit" and the other labeled "Product." The heat exchanger also receives a stream from the bottom of the hot separator.

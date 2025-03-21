@@ -1,0 +1,13 @@
+fastapi
+uvicorn
+python-multipart
+python-dotenv
+pydantic
+langchain
+langchain-chroma
+langchain-groq
+langchain-huggingface
+langchain-google-genai
+langgraph
+torch
+unstructured
