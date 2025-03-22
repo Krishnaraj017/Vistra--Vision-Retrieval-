@@ -1,61 +1,53 @@
-Co-processing biogenic feedstocks within petroleum refineries can produce lower-carbon-intensity diesel and aviation fuels, but presents operational challenges. Strategies to mitigate these challenges include pretreating feedstocks, infrastructure modifications, and using different feedstocks or refinery insertion points. Despite limited information, co-processing has potential to reduce carbon intensities of refineries and transportation fuels.
-Thermochemical liquefaction technologies convert biomass into liquid intermediates that can be upgraded to finished fuels like renewable diesel and SAF/biojet fuels. Co-processing these biogenic feedstocks with fossil-derived crudes can produce lower-carbon intensive transportation fuels, leveraging existing refining infrastructure.
-Biocrudes from different sources have varying TAN levels, aromatic content, and nitrogen content, affecting their stability, processing, and co-processing in refineries, and requiring adjustments to hydrotreatment and hydrogen consumption.
-Feedstocks for co-processing are lipids and biocrudes, which have distinct characteristics that impact co-processing. Lipids are globally available, have a high oxygen content, and require upgrading to remove oxygen and saturate double bonds. Biocrudes, available in limited quantities, have variable chemistry, high viscosity, and poor miscibility with fossil feeds, requiring modifications to co-processing.
-The fluid catalytic cracking (FCC) unit is used to crack heavy molecules, producing gasoline and propylene, and is a lower-risk option for refineries as it doesn't require external hydrogen and can tolerate higher oxygen levels in biofeeds. Hydrotreaters remove heteroatoms from product streams, including oxygen from co-processing blends, and are used to make diesel. Hydrocracking is a more severe process that breaks carbon-carbon bonds, increasing middle distillate production. Biocrudes may require cracking for middle distillate production, and pretreatments such as esterification and mild hydrotreatment can be used to stabilize biocrudes before co-processing.
-Biogenic feedstocks contain high levels of oxygen (5-50%) in the form of various chemical functional groups, which can promote unwanted chemical reactions during co-processing. Oxygen removal is necessary and can be achieved through hydrotreatment, which increases hydrogen demand. Pretreatment is also required to remove contaminants such as alkali metals, chlorides, and phosphorous that can deactivate catalysts. Deoxygenation of biocrudes can be achieved through hydrodeoxygenation, decarboxylation, and decarbonylation reactions.
-Hydrodeoxygenation, decarboxylation, and decarbonylation are three oxygen removal reactions that occur simultaneously in processing units, with varying ratios depending on conditions. Hydrodeoxygenation removes oxygen as water, while decarboxylation and decarbonylation remove oxygen as carbon dioxide and carbon monoxide, respectively, with potential losses of carbon and hydrocarbon yield.
-Biocrude deoxygenation involves various reactions, including decarbonylation, decarboxylation, and hydrodeoxygenation, which can be affected by side reactions like water-gas shift and methanation. These reactions can generate heat, causing operational issues like local overheating and catalyst damage. A modified hydrotreater design with multiple catalyst beds and quenching injections can help mitigate these problems.
-Biogenic feedstocks have varying oxygen levels, but most refineries co-processing lipids use low blending levels (5-10%) with minimal adjustments. Higher lipid blends (30%) require extensive refinery modifications, resulting in increased CO, CO2, H2O, and temperatures in the hydrotreater.
-Here's a detailed description of the image:
+This document appears to be a training manual for hydroprocessing technology, specifically a multi-licensee training event in Gurugram, India, from November 11-15, 2024. The instructors are Paul R. Zimmerman, Ragini, and KAK. The manual covers process variables, including reactor temperature, conversion, recycle cut point, feed quality, and others, with a focus on reactor temperature as a major control variable that correlates to average bed temperature and is vital for stable operation and maximum cycle length.
+The table describes the calculation of Weighted Average Bed Temperature (WABT) for a reactor with 4 beds, where WABT is a critical parameter for monitoring catalyst deactivation rates. The calculation involves averaging the inlet and outlet temperatures of each bed, and then weighting the average bed temperatures by their respective weight fractions to obtain the overall WABT of the reactor.
+The image is a title slide or cover page, likely for a presentation or document related to hydroprocessing technology training. The layout is diagonally divided into sections featuring different elements.
 
-The image features a detailed, vintage-style illustration above the word "ELSEVIER" in a golden-orange color.
+In the top left corner, the text "HYDRO PROCESSING TECHNOLOGY TRAINING" is stacked vertically in a bold, blue font. Below this, "PROCESS VARIABLES" is written in a smaller, less bold font, also in blue. A thin red line underlines "PROCESS VARIABLES."
 
-The illustration depicts a tree with dense foliage and a complex network of branches. A figure, possibly a monk or scholar, stands to the right of the tree, partially obscured by its trunk. The figure is wearing a robe and appears to be holding something. A snake is coiled around the tree trunk.
+The top portion of the image shows a nighttime view of an industrial plant with tall towers and complex piping. The lighting is dim, with some areas illuminated, creating a sense of depth.
 
-A banner or ribbon is draped across the tree branches on the left side, bearing the text "NON SOLUS."
+The right side of the image features a man wearing a hard hat, safety glasses, and an orange safety vest. He is holding a tablet and appears to be inspecting or monitoring the plant. Behind him and below him is another view of an industrial plant, this time during the daytime or at sunset, with warm, golden light illuminating the pipes and structures.
 
-The ground beneath the tree is textured with grass and foliage. The overall style of the illustration is reminiscent of woodcut or engraving techniques. The word "ELSEVIER" is written in a bold, sans-serif font.
-Here's a detailed description of the image:
+In the top right corner, the "Honeywell UOP" logo is displayed.
 
-The image is a cover of a journal titled "FUEL." The background color is a solid orange.
+At the bottom left corner, in a small font, is the text "Honeywell Confidential © 2024 UOP LLC. A Honeywell Company All rights reserved."
+The image presents a list of nine items, each labeled with a number from 01 to 09 and a descriptive phrase. Each item is separated by a horizontal line. The numbers are contained within colored squares, alternating between blue and green.
 
-At the top left corner, there's a small logo, which is difficult to discern in detail due to its size.
+Here's a breakdown of each item:
 
-The word "FUEL" is prominently displayed in large, bold, white letters with a black outline. The letters are slightly angled, giving a sense of depth.
+*   **01** (Blue square): Reactor Temperature
+*   **02** (Green square): Conversion
+*   **03** (Blue square): Liquid recycle
+*   **04** (Green square): Recycle Cut Point
+*   **05** (Blue square): Feed Quality
+*   **06** (Green square): Feed Rate (Space Velocity)
+*   **07** (Blue square): Recycle Gas Rate
+*   **08** (Green square): Hydrogen Partial Pressure
+*   **09** (Blue square): Other variables
+The image is titled "Available Variables" in red text at the top. Below the title, there is a collection of circles of varying sizes and colors scattered across a white background. The circles are outlined in different colors, including red, green, blue, black, light blue, pink, yellow, and brown. The circles are not filled in, leaving the centers white. The image is bordered by a thin red line at the bottom.
+The image contains the words "REACTOR TEMPERATURE" in large, bold, blue font. To the left of the text is a logo consisting of a blue triangle with a red triangle partially overlapping it. The background is white.
+The image is a diagram illustrating relationships between different aspects of a process, likely related to chemical engineering or catalysis. It features a central white circle surrounded by four text labels, each associated with a curved arrow-like shape. The arrows alternate in color between blue and green, creating a circular flow effect. Thin gray lines extend from the center circle to the corners of the image, dividing it into quadrants.
 
-Below "FUEL," in a smaller, light-blue font, is the tagline: "the science and technology of Fuel and Energy."
+The text labels are positioned around the central circle as follows:
 
-At the top right corner, the ISSN number "ISSN 0016-2361" is printed in a small, black font.
+*   **Top Left:** "Major control variable"
+*   **Top Right:** "Catalyst activity correlates to average bed temperature"
+*   **Bottom Left:** "Increased throughout cycle to compensate for decreasing catalyst activity"
+*   **Bottom Right:** "Maintaining close control is vital" followed by two bullet points: "• Stable operation" and "• Maximum cycle length"
 
-At the bottom left corner, there's some smaller text, including "AVAILABLE ONLINE AT WWW.SCIENCEDIRECT.COM" and below that, the word "ScienceDirect" in a larger font.
-Here's a detailed description of the image:
+The arrows are stylized, with the blue arrows appearing to "pass under" the green arrows, creating a sense of interconnectedness. The overall design suggests a cyclical process where each element influences the others.
+The image shows a large, red question mark. The question mark is slightly blurred, giving it a soft, almost fuzzy appearance. The background is white.
+The image presents three distinct text boxes, each describing a different temperature-related parameter. The boxes are arranged horizontally.
 
-The image is a square button with a light gray gradient background, giving it a slightly raised or 3D appearance. The button contains two main elements:
+The first box, outlined with a blue dotted line at the top and a solid blue line at the bottom, is titled "WABT - Weighted Average Bed Temperature." Below the title are three bullet points:
+* "Correlates to catalyst activity"
+* "Critical parameter used for monitoring catalyst deactivation rates"
+* "Calculation changes each time the reactors are loaded with catalyst"
 
-1.  **Icon:** At the top of the button is a circular icon. The icon consists of a blue circle with a yellow segment at the bottom left. Inside the circle is a red bookmark-like shape.
+The second box, outlined with a green dotted line at the top and a solid green line at the bottom, is titled "Delta T, temperature rise, axial bed rise." It contains two bullet points:
+* "Average bed outlet temperature – average bed inlet temperature"
+* "Indication of heat of reaction"
 
-2.  **Text:** Below the icon, in the lower half of the button, is the text "Check for updates" written in a dark gray, sans-serif font. The text is centered horizontally within the button.
-The image presents three chemical reactions, each numbered and labeled with a reaction type.
-
-(1) The first reaction, labeled "Decarbonylation," shows a molecule with a carboxylic acid group (COOH) and an "R" group attached to the carbon two positions away from the carbonyl carbon. This molecule reacts to form an alkene with the "R" group attached, carbon monoxide (CO), and water (H2O). The reaction is represented as:
-HO
-O
-R → R + CO + H2O
-
-(2) The second reaction, labeled "Decarboxylation," starts with the same initial molecule as in reaction (1). This molecule reacts to form an alkane with the "R" group attached and carbon dioxide (CO2). The reaction is represented as:
-HO
-O
-R → R + CO2
-
-(3) The third reaction, labeled "Hydrodeoxygenation," also starts with the same initial molecule as in reactions (1) and (2). This molecule reacts with hydrogen (+ H2) to form an alkane with the "R" group attached and two water molecules (2H2O). The reaction is represented as:
-HO
-O
-R + H2 → R + 2H2O
-
-In each reaction, the starting molecule is a carboxylic acid with a generic "R" group attached. The reactions are depicted with arrows indicating the transformation from reactants to products. The numbers (1), (2), and (3) are enclosed in parentheses and are located to the left of each reaction.
-The image is a schematic diagram of a hydrotreating process. The diagram is drawn with black lines on a light beige background.
-
-The process begins with "LGO Feed" entering from the left. This feed flows into a "Heat exchanger," represented by a circle with an "M" inside. From the heat exchanger, one stream goes to a "Fired heater," depicted as a red, stylized furnace. The heated stream then flows into the top of a "Hydrotreating reactor with four catalyst beds." The reactor is shown as a tall, cylindrical vessel with four sections, each containing a green cross-hatched pattern representing the catalyst beds. The label "RTD" points to the top of the reactor, and a line connects the top of the reactor to "Make-up + recycle H₂" at the top right of the image.
-
-From the bottom of the reactor, the product stream flows into a "Hot separator," represented by a green rectangle. Two streams exit the hot separator: one labeled "To amine unit" and the other labeled "Product." The heat exchanger also receives a stream from the bottom of the hot separator.
+The third box, outlined with a blue dotted line at the top and a solid blue line at the bottom, is titled "Radial temperature spread, radial DT." It includes two bullet points:
+* "Maximum – Minimum among temperature readings at the same level in the reactor"
+* "Used as indication of flow distribution"
