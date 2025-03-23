@@ -11,3 +11,5 @@ langchain-google-genai
 langgraph
 torch
 unstructured
+pillow 
+requests

@@ -20,7 +20,7 @@ from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 import torch
 
-from multi_modal_main import MultiModalRAG
+from docker.backend.multi_modal_main import MultiModalRAG
 
 app = FastAPI()
 
