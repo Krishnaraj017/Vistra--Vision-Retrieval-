@@ -12,3 +12,4 @@ langgraph
 torch
 unstructured
 IPython
+pdfminer
