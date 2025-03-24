@@ -1,42 +1,4 @@
-This document appears to be a training manual for hydroprocessing technology, specifically a multi-licensee training event in Gurugram, India, from November 11-15, 2024. The instructors are Paul R. Zimmerman, Ragini, and KAK. The manual covers process variables, including reactor temperature, conversion, recycle cut point, feed quality, and others, with a focus on reactor temperature as a major control variable that correlates to average bed temperature and is vital for stable operation and maximum cycle length.
-The table describes the calculation of Weighted Average Bed Temperature (WABT) for a reactor with 4 beds, where WABT is a critical parameter for monitoring catalyst deactivation rates. The calculation involves averaging the inlet and outlet temperatures of each bed, and then weighting the average bed temperatures by their respective weight fractions to obtain the overall WABT of the reactor.
-The image is a title slide or cover page, likely for a presentation or document related to hydroprocessing technology training. The layout is diagonally divided into sections featuring different elements.
-
-In the top left corner, the text "HYDRO PROCESSING TECHNOLOGY TRAINING" is stacked vertically in a bold, blue font. Below this, "PROCESS VARIABLES" is written in a smaller, less bold font, also in blue. A thin red line underlines "PROCESS VARIABLES."
-
-The top portion of the image shows a nighttime view of an industrial plant with tall towers and complex piping. The lighting is dim, with some areas illuminated, creating a sense of depth.
-
-The right side of the image features a man wearing a hard hat, safety glasses, and an orange safety vest. He is holding a tablet and appears to be inspecting or monitoring the plant. Behind him and below him is another view of an industrial plant, this time during the daytime or at sunset, with warm, golden light illuminating the pipes and structures.
-
-In the top right corner, the "Honeywell UOP" logo is displayed.
-
-At the bottom left corner, in a small font, is the text "Honeywell Confidential © 2024 UOP LLC. A Honeywell Company All rights reserved."
-The image presents a list of nine items, each labeled with a number from 01 to 09 and a descriptive phrase. Each item is separated by a horizontal line. The numbers are contained within colored squares, alternating between blue and green.
-
-Here's a breakdown of each item:
-
-*   **01** (Blue square): Reactor Temperature
-*   **02** (Green square): Conversion
-*   **03** (Blue square): Liquid recycle
-*   **04** (Green square): Recycle Cut Point
-*   **05** (Blue square): Feed Quality
-*   **06** (Green square): Feed Rate (Space Velocity)
-*   **07** (Blue square): Recycle Gas Rate
-*   **08** (Green square): Hydrogen Partial Pressure
-*   **09** (Blue square): Other variables
-The image is titled "Available Variables" in red text at the top. Below the title, there is a collection of circles of varying sizes and colors scattered across a white background. The circles are outlined in different colors, including red, green, blue, black, light blue, pink, yellow, and brown. The circles are not filled in, leaving the centers white. The image is bordered by a thin red line at the bottom.
-The image contains the words "REACTOR TEMPERATURE" in large, bold, blue font. To the left of the text is a logo consisting of a blue triangle with a red triangle partially overlapping it. The background is white.
-The image is a diagram illustrating relationships between different aspects of a process, likely related to chemical engineering or catalysis. It features a central white circle surrounded by four text labels, each associated with a curved arrow-like shape. The arrows alternate in color between blue and green, creating a circular flow effect. Thin gray lines extend from the center circle to the corners of the image, dividing it into quadrants.
-
-The text labels are positioned around the central circle as follows:
-
-*   **Top Left:** "Major control variable"
-*   **Top Right:** "Catalyst activity correlates to average bed temperature"
-*   **Bottom Left:** "Increased throughout cycle to compensate for decreasing catalyst activity"
-*   **Bottom Right:** "Maintaining close control is vital" followed by two bullet points: "• Stable operation" and "• Maximum cycle length"
-
-The arrows are stylized, with the blue arrows appearing to "pass under" the green arrows, creating a sense of interconnectedness. The overall design suggests a cyclical process where each element influences the others.
-The image shows a large, red question mark. The question mark is slightly blurred, giving it a soft, almost fuzzy appearance. The background is white.
+The table calculates the Weighted Average Bed Temperature (WABT) of a reactor with 4 beds, which correlates to catalyst activity and is critical for monitoring catalyst deactivation rates. WABT is calculated by multiplying the weight fraction of each bed by its Average Bed Temperature (ABT) and summing the results.
 The image presents three distinct text boxes, each describing a different temperature-related parameter. The boxes are arranged horizontally.
 
 The first box, outlined with a blue dotted line at the top and a solid blue line at the bottom, is titled "WABT - Weighted Average Bed Temperature." Below the title are three bullet points:

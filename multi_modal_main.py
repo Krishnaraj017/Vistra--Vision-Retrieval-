@@ -336,7 +336,7 @@ Ensure clarity and accuracy when describing such elements.
         
         Current question: {user_question}
         
-        Use the conversation history for context, but base your answer primarily on the document content.
+        Use the conversation history if required, but base your answer primarily on the document content.
         If you don't know the answer based on the provided context, say so.
         """
         
