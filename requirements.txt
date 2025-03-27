@@ -16,3 +16,4 @@ pdfminer.six>=20220101,<20240101
 pi-heif
 unstructured-inference
 pdf2image
+nltk
