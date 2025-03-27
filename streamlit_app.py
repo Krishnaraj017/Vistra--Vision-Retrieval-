@@ -16,12 +16,12 @@ st.set_page_config(
 FASTAPI_URL = "http://127.0.0.1:8000/"
 
 def main():
-    st.title("MultiModal Document Assistant")
+    # st.title("MultiModal Document Assistant")
     st.subheader("Upload PDFs and ask questions about your documents")
     
     # Sidebar
     with st.sidebar:
-        st.header("Controls")
+        # st.header("Controls")
         
         # PDF Upload
         st.subheader("Upload a PDF")
@@ -32,16 +32,16 @@ def main():
             with st.spinner("Processing PDF..."):
                 process_pdf(uploaded_file)
         
-        # Clear memory/conversation
-        if st.button("Clear Conversation History"):
-            clear_memory()
-            st.session_state.messages = []
-            st.success("Conversation history cleared!")
+        # # Clear memory/conversation
+        # if st.button("Clear Conversation History"):
+        #     clear_memory()
+        #     st.session_state.messages = []
+        #     st.success("Conversation history cleared!")
         
         # Options for retrieval
-        st.subheader("Retrieval Options")
-        return_sources = st.checkbox("Show sources", value=False)
-        return_images = st.checkbox("Include images", value=True)
+        # st.subheader("Retrieval Options")
+        # return_sources = st.checkbox("Show sources", value=False)
+        # return_images = st.checkbox("Include images", value=True)
         
         # View all images
         if st.button("View All Document Images"):
@@ -82,29 +82,29 @@ def main():
         # Get assistant response
         with st.chat_message("assistant"):
             with st.spinner("Processing..."):
-                response = ask_question(prompt, return_sources, return_images)
+                response = ask_question(prompt, False, False)
                 
                 # Display text response
                 st.write(response["text_response"])
                 
                 # Display images if any
-                if return_images and "images" in response and response["images"]:
-                    # Display images in a grid using columns
-                    cols = st.columns(min(3, len(response["images"])))
-                    for i, img_data in enumerate(response["images"]):
-                        with cols[i % 3]:
-                            try:
-                                # Decode base64 image
-                                img_bytes = base64.b64decode(img_data["data"])
-                                img = Image.open(io.BytesIO(img_bytes))
-                                st.image(img, use_column_width=True)
-                            except Exception as e:
-                                st.error(f"Error displaying image: {str(e)}")
+                # if return_images and "images" in response and response["images"]:
+                #     # Display images in a grid using columns
+                #     cols = st.columns(min(3, len(response["images"])))
+                #     for i, img_data in enumerate(response["images"]):
+                #         with cols[i % 3]:
+                #             try:
+                #                 # Decode base64 image
+                #                 img_bytes = base64.b64decode(img_data["data"])
+                #                 img = Image.open(io.BytesIO(img_bytes))
+                #                 st.image(img, use_column_width=True)
+                #             except Exception as e:
+                #                 st.error(f"Error displaying image: {str(e)}")
                 
-                # Display sources if requested
-                if return_sources and "sources" in response and response["sources"]:
-                    with st.expander("Sources"):
-                        st.json(response["sources"])
+                # # Display sources if requested
+                # if return_sources and "sources" in response and response["sources"]:
+                #     with st.expander("Sources"):
+                #         st.json(response["sources"])
         
         # Add assistant response to chat history
         st.session_state.messages.append({

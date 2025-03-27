@@ -328,15 +328,15 @@ Ensure clarity and accuracy when describing such elements.
         # Construct prompt with history
         prompt_template = f"""
         Answer the question based only on the following context, which can include text, tables, and images.
-        
-        Context: {context_text}
-        
+
         Previous conversation:
         {history_text}
         
+        Context: {context_text}
+        
         Current question: {user_question}
         
-        Use the conversation history if required, but base your answer primarily on the document content.
+        Use the conversation history if required but the aswere should be based on the context provided.
         If you don't know the answer based on the provided context, say so.
         """
         
