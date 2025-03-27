@@ -12,4 +12,4 @@ langgraph
 torch
 unstructured
 IPython
-pdfminer.six==20220610
+pdfminer.six>=20220101,<20240101
