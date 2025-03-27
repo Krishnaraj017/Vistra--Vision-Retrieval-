@@ -13,3 +13,4 @@ torch
 unstructured
 IPython
 pdfminer.six>=20220101,<20240101
+pi-heif
