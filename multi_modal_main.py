@@ -188,7 +188,9 @@ class MultiModalRAG:
         # Define summarization prompt
         prompt_text = """
         You are an assistant tasked with summarizing tables and text.
-        Give a concise summary of the table or text.
+        Your job is to provide a detailed yet concise summary that includes every important piece of information from the input.
+
+        Ensure that all relevant data points, facts, and key elements are captured in the summary.
 
         Respond only with the summary, no additional comment.
         Do not start your message by saying "Here is a summary" or anything like that.
@@ -196,6 +198,7 @@ class MultiModalRAG:
 
         Table or text chunk: {element}
         """
+
         summarize_prompt = ChatPromptTemplate.from_template(prompt_text)
         summarize_chain = {"element": lambda x: x} | summarize_prompt | self.text_llm | StrOutputParser()
         
@@ -207,15 +210,20 @@ class MultiModalRAG:
         self.table_summaries = summarize_chain.batch(tables_html, {"max_concurrency": 3})
         
         # Generate image descriptions
-        prompt_template = """Describe the image in detail. For context, the image is part of a research paper. Be specific about graphical elements, labels, and any text present in the image.  
-
-If the image contains chemical formulas, mathematical equations, or other symbolic notations, transcribe them exactly as they appear. Additionally, if these elements are associated with a title, include the notation alongside the title in the description.  
-
-For example, if the image contains an equation like **a + b = c** under a title "Equation of Addition," describe it as:  
-*"The image presents an equation labeled 'Equation of Addition,' which states a + b = c. The equation is written in a standard mathematical notation and appears prominently in the center of the image."*  
-
-Ensure clarity and accuracy when describing such elements.
-"""
+        prompt_template =  """
+        Describe the financial chart or graph in detail. The image is part of a fund factsheet or financial report.
+        
+        Be specific about:
+        1. The type of chart (line chart, bar chart, pie chart, etc.)
+        2. The title and what financial data it's displaying
+        3. The time period covered (if applicable)
+        4. The numerical values shown, including any highs, lows, or trends
+        5. Any comparison benchmarks included
+        6. Any legends or color coding that indicates different assets or categories
+        7. Any annotations or callouts highlighting specific financial events
+        
+        For financial data visualization, precision is essential. Provide exact figures where visible.
+        """
         messages = [
             (
                 "user",
