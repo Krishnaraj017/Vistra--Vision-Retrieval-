@@ -1,0 +1,128 @@
+2025-04-07 14:33:30,166 - multi_modal_main.MultiModalRAG - INFO - Initializing MultiModalRAG system
+2025-04-07 14:33:59,113 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-04-07 14:34:05,135 - multi_modal_main.MultiModalRAG - INFO - Using cpu for embeddings with BAAI/bge-large-en-v1.5
+2025-04-07 14:34:06,624 - multi_modal_main.MultiModalRAG - INFO - Initialized Groq LLM with llama3-70b-8192 model
+2025-04-07 14:34:06,756 - multi_modal_main.MultiModalRAG - INFO - Initialized Google Gemini-2.0-flash vision LLM
+2025-04-07 14:34:06,757 - multi_modal_main.MultiModalRAG - INFO - Initializing vector store and retriever
+2025-04-07 14:34:06,812 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-07 14:34:16,691 - multi_modal_main.MultiModalRAG - INFO - Successfully connected to MongoDB at mongodb+srv://pdf:pdf123@cluster0.ctdsyfh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-04-07 14:34:16,691 - multi_modal_main.MultiModalRAG - INFO - Created new thread ID: 1663d34b-5137-4329-9ffa-8aa9caa5dc5d
+2025-04-07 14:34:16,724 - multi_modal_main.MultiModalRAG - INFO - Processing PDF: /tmp/final-factsheet-feb-25-24-26-1.pdf
+2025-04-07 14:34:16,727 - multi_modal_main.MultiModalRAG - INFO - Partitioning PDF with by_title strategy
+2025-04-07 14:34:16,924 - pikepdf._core - INFO - pikepdf C++ to Python logger bridge initialized
+2025-04-07 14:34:20,461 - unstructured_inference - INFO - Reading PDF for file: /tmp/final-factsheet-feb-25-24-26-1.pdf ...
+2025-04-07 14:34:41,292 - unstructured_inference - INFO - Loading the Table agent ...
+2025-04-07 14:34:41,292 - unstructured_inference - INFO - Loading the table structure model ...
+2025-04-07 14:34:41,965 - timm.models._builder - INFO - Loading pretrained weights from Hugging Face hub (timm/resnet18.a1_in1k)
+2025-04-07 14:34:42,236 - timm.models._hub - INFO - [timm/resnet18.a1_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2025-04-07 14:34:42,501 - timm.models._builder - INFO - Missing keys (fc.weight, fc.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+2025-04-07 14:34:55,874 - multi_modal_main.MultiModalRAG - INFO - Extracted 6 text chunks, 0 tables, and 2 images
+2025-04-07 14:34:55,874 - multi_modal_main.MultiModalRAG - INFO - Generating summaries for text, tables, and images
+2025-04-07 14:34:55,877 - multi_modal_main.MultiModalRAG - INFO - Summarizing 6 text chunks
+2025-04-07 14:34:56,817 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:34:56,866 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:34:57,821 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:34:57,864 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:34:57,877 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:34:58,321 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:34:58,321 - multi_modal_main.MultiModalRAG - INFO - Generating descriptions for 2 images
+2025-04-07 14:35:05,653 - multi_modal_main.MultiModalRAG - INFO - Generated 6 text summaries, 0 table summaries, and 2 image descriptions
+2025-04-07 14:35:05,655 - multi_modal_main.MultiModalRAG - INFO - Saved summaries to document_chunks.txt
+2025-04-07 14:35:05,656 - multi_modal_main.MultiModalRAG - INFO - Indexing content in vector store
+2025-04-07 14:35:39,931 - multi_modal_main.MultiModalRAG - ERROR - Error indexing content: 'dict' object has no attribute '__dict__'
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-Space\docker\multi_modal_main.py", line 450, in index_content
+    self.retriever.docstore.mset(doc_store_entries)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_community\storage\mongodb.py", line 222, in mset
+    updates = [{"_id": k, "value": v.__dict__} for k, v in key_value_pairs]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_community\storage\mongodb.py", line 222, in <listcomp>
+    updates = [{"_id": k, "value": v.__dict__} for k, v in key_value_pairs]
+                                   ^^^^^^^^^^
+AttributeError: 'dict' object has no attribute '__dict__'
+2025-04-07 14:35:39,931 - multi_modal_main.MultiModalRAG - INFO - Setting up RAG chain with memory
+2025-04-07 14:35:39,947 - multi_modal_main.MultiModalRAG - INFO - RAG chain setup complete
+2025-04-07 14:41:16,400 - multi_modal_main.MultiModalRAG - INFO - Initializing MultiModalRAG system
+2025-04-07 14:41:25,030 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: BAAI/bge-large-en-v1.5
+2025-04-07 14:41:31,720 - multi_modal_main.MultiModalRAG - INFO - Using cpu for embeddings with BAAI/bge-large-en-v1.5
+2025-04-07 14:41:33,255 - multi_modal_main.MultiModalRAG - INFO - Initialized Groq LLM with llama3-70b-8192 model
+2025-04-07 14:41:33,305 - multi_modal_main.MultiModalRAG - INFO - Initialized Google Gemini-2.0-flash vision LLM
+2025-04-07 14:41:33,305 - multi_modal_main.MultiModalRAG - INFO - Initializing vector store and retriever
+2025-04-07 14:41:33,367 - chromadb.telemetry.product.posthog - INFO - Anonymized telemetry enabled. See                     https://docs.trychroma.com/telemetry for more information.
+2025-04-07 14:41:42,680 - multi_modal_main.MultiModalRAG - INFO - Successfully connected to MongoDB at mongodb+srv://pdf:pdf123@cluster0.ctdsyfh.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0
+2025-04-07 14:41:42,680 - multi_modal_main.MultiModalRAG - INFO - Created new thread ID: 60ace004-9e78-4514-880c-ebfe944799ef
+2025-04-07 14:43:23,249 - multi_modal_main.MultiModalRAG - INFO - Processing PDF: /tmp/final-factsheet-feb-25-24-26-1.pdf
+2025-04-07 14:43:23,249 - multi_modal_main.MultiModalRAG - INFO - Partitioning PDF with by_title strategy
+2025-04-07 14:43:23,332 - pikepdf._core - INFO - pikepdf C++ to Python logger bridge initialized
+2025-04-07 14:43:27,593 - unstructured_inference - INFO - Reading PDF for file: /tmp/final-factsheet-feb-25-24-26-1.pdf ...
+2025-04-07 14:43:48,188 - unstructured_inference - INFO - Loading the Table agent ...
+2025-04-07 14:43:48,188 - unstructured_inference - INFO - Loading the table structure model ...
+2025-04-07 14:43:48,879 - timm.models._builder - INFO - Loading pretrained weights from Hugging Face hub (timm/resnet18.a1_in1k)
+2025-04-07 14:43:49,144 - timm.models._hub - INFO - [timm/resnet18.a1_in1k] Safe alternative available for 'pytorch_model.bin' (as 'model.safetensors'). Loading weights using safetensors.
+2025-04-07 14:43:49,406 - timm.models._builder - INFO - Missing keys (fc.weight, fc.bias) discovered while loading pretrained weights. This is expected if model is being adapted.
+2025-04-07 14:44:02,647 - multi_modal_main.MultiModalRAG - INFO - Extracted 6 text chunks, 0 tables, and 2 images
+2025-04-07 14:44:02,647 - multi_modal_main.MultiModalRAG - INFO - Generating summaries for text, tables, and images
+2025-04-07 14:44:02,647 - multi_modal_main.MultiModalRAG - INFO - Summarizing 6 text chunks
+2025-04-07 14:44:03,619 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:44:04,440 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:44:04,596 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:44:04,873 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:44:05,061 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:44:05,578 - httpx - INFO - HTTP Request: POST https://api.groq.com/openai/v1/chat/completions "HTTP/1.1 200 OK"
+2025-04-07 14:44:05,578 - multi_modal_main.MultiModalRAG - INFO - Generating descriptions for 2 images
+2025-04-07 14:44:11,739 - multi_modal_main.MultiModalRAG - INFO - Generated 6 text summaries, 0 table summaries, and 2 image descriptions
+2025-04-07 14:44:11,743 - multi_modal_main.MultiModalRAG - INFO - Saved summaries to document_chunks.txt
+2025-04-07 14:44:11,744 - multi_modal_main.MultiModalRAG - INFO - Indexing content in vector store
+2025-04-07 14:44:50,506 - multi_modal_main.MultiModalRAG - ERROR - Error indexing content: Invalid document {'q': {'_id': '877a719c-32af-41ca-ba40-ed92104722dc'}, 'u': {'$set': {'_id': '877a719c-32af-41ca-ba40-ed92104722dc', 'value': {'id': None, 'metadata': {'text': 'CANARA ROBECO SAVINGS FUND (CRSF)\n\nCANARA ROBECO SAVINGS FUND (CRSF)\n\n(as on February 28, 2025)\n\n(as on February 28, 2025)\n\nThis product is suitable for investors who are seeking*:\n\nModerate Risk\n\nodertly High ik\n\nio Ris\n\nIncome / Capital appreciation through a low duration strategy\n\nInvestment in debt & money market instruments such that the Macaulay duration of the portfolio is between 6 months and 12 months\n\nSCHEME RISKOMETER\n\nThe risk ofthe scheme is Low to Moderate\n\n*Investors should consult their financial advisers if in doubt about whether the\n\nproduct is suitable for them.\n\nDirect Plan - Daily Reinvestment of Income Distribution cum Capital Withdrawal Option Direct Plan - Weekly Payout of Income Distribution cum Capital Withdrawal Option Direct Plan - Weekly Reinvestment of Income Distribution cum Capital Withdrawal Option Direct Plan - Monthly Payout of Income Distribution cum Capital Withdrawal Option Direct Plan - Monthly Reinvestment of Income Distribution cum Capital Withdrawal Option Direct Plan - Growth Option ENTRY LOAD: Nil EXIT LOAD: Nil EXPENSE RATIO^: Regular Plan(%) : 0.63 Direct Plan(%) : 0.32 BENCHMARK: CRISIL Low Duration Debt A-I Index FUND MANAGER: 1) Mr. Kunal Jain 2) Mr. Avnish Jain TOTAL EXPERIENCE: 1) 17 Years 2) 30 Years MANAGING THIS FUND: 1) Since 18-July-22 2) Since 01-April-22', 'metadata': {'file_directory': '/tmp', 'filename': 'final-factsheet-feb-25-24-26-1.pdf', 'filetype': 'application/pdf', 'languages': ['eng'], 'last_modified': '2025-04-07T14:43:23', 'orig_elements': [<unstructured.documents.elements.Title object at 0x0000022BE929F410>, <unstructured.documents.elements.Text object at 0x0000022BE9678F10>, <unstructured.documents.elements.Header object at 0x0000022BE967AA90>, <unstructured.documents.elements.Title object at 0x0000022BE9543CD0>, <unstructured.documents.elements.Title object at 0x0000022BE9679A50>, <unstructured.documents.elements.Title object at 0x0000022BE9542F10>, <unstructured.documents.elements.Title object at 0x0000022BF1E63F50>, <unstructured.documents.elements.Title object at 0x0000022BF1E62310>, <unstructured.documents.elements.ListItem object at 0x0000022BE96798D0>, <unstructured.documents.elements.ListItem object at 0x0000022BE9679490>, <unstructured.documents.elements.Title object at 0x0000022BE9542FD0>, <unstructured.documents.elements.NarrativeText object at 0x0000022BF1E90A10>, <unstructured.documents.elements.NarrativeText object at 0x0000022BF1E63190>, <unstructured.documents.elements.NarrativeText object at 0x0000022BE92D8390>, <unstructured.documents.elements.Table object at 0x0000022BF1E63C10>], 'page_number': 1, 'text_as_html': '<table><tbody><tr><td colspan="3">Direct Plan - Daily Reinvestment of Income Distribution cum Capital Withdrawal Option</td></tr><tr><td colspan="3">Direct Plan - Weekly Payout of Income Distribution cum Capital Withdrawal Option</td></tr><tr><td>Direct Plan Monthly cum Capital Withdrawal Direct Plan - Distribution cum</td><td>Monthly</td><td>Payout of Income Distribution Option Reinvestment of Income</td></tr><tr><td>Direct Plan - Growth</td><td>Capital Option</td><td>Withdrawal Option</td></tr><tr><td>ENTRY LOAD: Nil</td><td></td><td></td></tr><tr><td>EXITLOAD: Nil</td><td></td><td></td></tr><tr><td colspan="3">EXPENSE RATIO*:</td></tr><tr><td>Regular Plan(%)</td><td>:</td><td>0.63</td></tr><tr><td>Direct Plan(%)</td><td>:</td><td>0.32</td></tr><tr><td colspan="3">BENCHMARK: CRISILLow Duration Debt A-I Index</td></tr><tr><td colspan="3">FUND MANAGER: 1) Mr. KunalJain 2) Mr. Avnish Jain</td></tr><tr><td colspan="3">TOTALEXPERIENCE: 1) 17Years 2) 30 Years</td></tr><tr><td colspan="3">MANAGINGTHISFUND: 1) Since 18-July-22 2) Since 01-April-22</td></tr></tbody></table>'}}, 'page_content': '', 'type': 'Document'}}}, 'multi': False, 'upsert': True} | cannot encode object: <unstructured.documents.elements.Title object at 0x0000022BE929F410>, of type: <class 'unstructured.documents.elements.Title'>
+Traceback (most recent call last):
+  File "C:\Users\Asus\Desktop\Project-Space\docker\multi_modal_main.py", line 450, in index_content
+    self.retriever.docstore.mset(doc_store_entries)
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\langchain_community\storage\mongodb.py", line 223, in mset
+    self.collection.bulk_write(
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\collection.py", line 791, in bulk_write
+    bulk_api_result = blk.execute(write_concern, session, _Op.INSERT)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\bulk.py", line 751, in execute
+    return self.execute_command(generator, write_concern, session, operation)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\bulk.py", line 604, in execute_command
+    _ = client._retryable_write(
+        ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1896, in _retryable_write
+    return self._retry_with_session(retryable, func, s, bulk, operation, operation_id)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1782, in _retry_with_session
+    return self._retry_internal(
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\_csot.py", line 119, in csot_wrapper
+    return func(self, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 1828, in _retry_internal
+    ).run()
+      ^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2565, in run
+    return self._read() if self._is_read else self._write()
+                                              ^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\mongo_client.py", line 2687, in _write
+    return self._func(self._session, conn, self._retryable)  # type: ignore
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\bulk.py", line 593, in retryable_bulk
+    self._execute_command(
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\bulk.py", line 538, in _execute_command
+    result, to_send = self._execute_batch(bwc, cmd, ops, client)
+                      ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\synchronous\bulk.py", line 461, in _execute_batch
+    request_id, msg, to_send = bwc.batch_command(cmd, ops)
+                               ^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\message.py", line 699, in batch_command
+    request_id, msg, to_send = _do_batched_op_msg(
+                               ^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Asus\AppData\Local\Programs\Python\Python311\Lib\site-packages\pymongo\message.py", line 926, in _do_batched_op_msg
+    return _batched_op_msg(operation, command, docs, ack, opts, ctx)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+bson.errors.InvalidDocument: Invalid document {'q': {'_id': '877a719c-32af-41ca-ba40-ed92104722dc'}, 'u': {'$set': {'_id': '877a719c-32af-41ca-ba40-ed92104722dc', 'value': {'id': None, 'metadata': {'text': 'CANARA ROBECO SAVINGS FUND (CRSF)\n\nCANARA ROBECO SAVINGS FUND (CRSF)\n\n(as on February 28, 2025)\n\n(as on February 28, 2025)\n\nThis product is suitable for investors who are seeking*:\n\nModerate Risk\n\nodertly High ik\n\nio Ris\n\nIncome / Capital appreciation through a low duration strategy\n\nInvestment in debt & money market instruments such that the Macaulay duration of the portfolio is between 6 months and 12 months\n\nSCHEME RISKOMETER\n\nThe risk ofthe scheme is Low to Moderate\n\n*Investors should consult their financial advisers if in doubt about whether the\n\nproduct is suitable for them.\n\nDirect Plan - Daily Reinvestment of Income Distribution cum Capital Withdrawal Option Direct Plan - Weekly Payout of Income Distribution cum Capital Withdrawal Option Direct Plan - Weekly Reinvestment of Income Distribution cum Capital Withdrawal Option Direct Plan - Monthly Payout of Income Distribution cum Capital Withdrawal Option Direct Plan - Monthly Reinvestment of Income Distribution cum Capital Withdrawal Option Direct Plan - Growth Option ENTRY LOAD: Nil EXIT LOAD: Nil EXPENSE RATIO^: Regular Plan(%) : 0.63 Direct Plan(%) : 0.32 BENCHMARK: CRISIL Low Duration Debt A-I Index FUND MANAGER: 1) Mr. Kunal Jain 2) Mr. Avnish Jain TOTAL EXPERIENCE: 1) 17 Years 2) 30 Years MANAGING THIS FUND: 1) Since 18-July-22 2) Since 01-April-22', 'metadata': {'file_directory': '/tmp', 'filename': 'final-factsheet-feb-25-24-26-1.pdf', 'filetype': 'application/pdf', 'languages': ['eng'], 'last_modified': '2025-04-07T14:43:23', 'orig_elements': [<unstructured.documents.elements.Title object at 0x0000022BE929F410>, <unstructured.documents.elements.Text object at 0x0000022BE9678F10>, <unstructured.documents.elements.Header object at 0x0000022BE967AA90>, <unstructured.documents.elements.Title object at 0x0000022BE9543CD0>, <unstructured.documents.elements.Title object at 0x0000022BE9679A50>, <unstructured.documents.elements.Title object at 0x0000022BE9542F10>, <unstructured.documents.elements.Title object at 0x0000022BF1E63F50>, <unstructured.documents.elements.Title object at 0x0000022BF1E62310>, <unstructured.documents.elements.ListItem object at 0x0000022BE96798D0>, <unstructured.documents.elements.ListItem object at 0x0000022BE9679490>, <unstructured.documents.elements.Title object at 0x0000022BE9542FD0>, <unstructured.documents.elements.NarrativeText object at 0x0000022BF1E90A10>, <unstructured.documents.elements.NarrativeText object at 0x0000022BF1E63190>, <unstructured.documents.elements.NarrativeText object at 0x0000022BE92D8390>, <unstructured.documents.elements.Table object at 0x0000022BF1E63C10>], 'page_number': 1, 'text_as_html': '<table><tbody><tr><td colspan="3">Direct Plan - Daily Reinvestment of Income Distribution cum Capital Withdrawal Option</td></tr><tr><td colspan="3">Direct Plan - Weekly Payout of Income Distribution cum Capital Withdrawal Option</td></tr><tr><td>Direct Plan Monthly cum Capital Withdrawal Direct Plan - Distribution cum</td><td>Monthly</td><td>Payout of Income Distribution Option Reinvestment of Income</td></tr><tr><td>Direct Plan - Growth</td><td>Capital Option</td><td>Withdrawal Option</td></tr><tr><td>ENTRY LOAD: Nil</td><td></td><td></td></tr><tr><td>EXITLOAD: Nil</td><td></td><td></td></tr><tr><td colspan="3">EXPENSE RATIO*:</td></tr><tr><td>Regular Plan(%)</td><td>:</td><td>0.63</td></tr><tr><td>Direct Plan(%)</td><td>:</td><td>0.32</td></tr><tr><td colspan="3">BENCHMARK: CRISILLow Duration Debt A-I Index</td></tr><tr><td colspan="3">FUND MANAGER: 1) Mr. KunalJain 2) Mr. Avnish Jain</td></tr><tr><td colspan="3">TOTALEXPERIENCE: 1) 17Years 2) 30 Years</td></tr><tr><td colspan="3">MANAGINGTHISFUND: 1) Since 18-July-22 2) Since 01-April-22</td></tr></tbody></table>'}}, 'page_content': '', 'type': 'Document'}}}, 'multi': False, 'upsert': True} | cannot encode object: <unstructured.documents.elements.Title object at 0x0000022BE929F410>, of type: <class 'unstructured.documents.elements.Title'>
+2025-04-07 14:44:50,833 - multi_modal_main.MultiModalRAG - INFO - Setting up RAG chain with memory
+2025-04-07 14:44:50,900 - multi_modal_main.MultiModalRAG - INFO - RAG chain setup complete

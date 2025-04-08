@@ -1,4 +1,5 @@
 import os
+import pickle
 import uuid
 import base64
 from typing import List, Dict, Any, Union
@@ -22,6 +23,8 @@ import torch
 # LangGraph imports for memory
 from langgraph.graph import MessagesState
 
+from langchain_community.storage import SQLStore
+import sqlite3
 class MultiModalRAG:
     """
     A Retrieval Augmented Generation system that processes PDFs with text, tables, and images.
@@ -33,7 +36,11 @@ class MultiModalRAG:
         llm_model="groq",
         groq_api_key=None,
         google_api_key=None,
-        output_path="./content/"
+        output_path="./content/",
+        mongodb_uri="mongodb://localhost:27017/",
+        mongodb_db="rag_db",
+        mongodb_collection="documents"
+
     ):
         """
         Initialize the RAG system with the specified models.
@@ -44,6 +51,9 @@ class MultiModalRAG:
             groq_api_key: API key for Groq (if using Groq models)
             google_api_key: API key for Google Generative AI
             output_path: Directory to store output files
+            mongodb_uri: Connection string for MongoDB
+            mongodb_db: MongoDB database name
+            mongodb_collection: MongoDB collection name for document storage
         """
         self.output_path = output_path
         os.makedirs(output_path, exist_ok=True)
@@ -76,6 +86,11 @@ class MultiModalRAG:
                 model="llama3-70b-8192",
                 api_key=groq_api_key or os.environ.get("GROQ_API_KEY")
             )
+            # self.text_llm = ChatGoogleGenerativeAI(
+            #     temperature=0,
+            #     model="gemini-2.0-flash",  # Gemini model with multimodal capabilities
+            #     google_api_key=google_api_key or os.environ.get("GOOGLE_API_KEY")
+            # )
             self.vision_llm = ChatGoogleGenerativeAI(
                 temperature=0,
                 model="gemini-2.0-flash",  # Gemini model with multimodal capabilities
@@ -87,9 +102,35 @@ class MultiModalRAG:
         # Initialize vector store and retriever
         self.vectorstore = Chroma(
             collection_name="multi_modal_rag", 
-            embedding_function=self.embedding_function
+            embedding_function=self.embedding_function,
+            persist_directory="./chroma_store"  # or some permanent path
         )
-        self.store = InMemoryStore()
+        # try:
+        #     # Create MongoDB client
+        #     self.mongo_client = MongoClient(mongodb_uri)
+            
+        #     # Initialize MongoDB store
+        #     self.store = MongoDBStore(
+        #         client=self.mongo_client,
+        #         db_name=mongodb_db,
+        #         collection_name=mongodb_collection
+        #     )
+        #     print(f"Successfully connected to MongoDB at {mongodb_uri}")
+            
+        # except Exception as e:
+        #     print(f"Error connecting to MongoDB: {e}")
+        #     print("Falling back to InMemoryStore")
+        #     self.store = InMemoryStore()
+
+        # self.store = InMemoryStore()
+        # conn = sqlite3.connect("./rag_data.db")
+        self.store = SQLStore(
+            namespace="multi_modal_rag_documents",
+            db_url="sqlite:///./rag_data.db",  # SQLite database file
+            # engine_kwargs={"pool_size": 5},  # Optional connection pool settings
+        )
+        self.store.create_schema()
+
         self.id_key = "doc_id"
         
         self.retriever = MultiVectorRetriever(
@@ -109,7 +150,10 @@ class MultiModalRAG:
         # Initialize memory with LangGraph MemorySaver
         self.history_manager = ConversationHistoryManager()
         self.thread_id = str(uuid.uuid4())
-        
+    def serialize_documents(docs):
+        """Serialize documents to bytes before storage"""
+        return [(doc_id, pickle.dumps(doc)) for doc_id, doc in docs]
+
     def set_thread_id(self, thread_id=None):
         """
         Set or generate a new thread ID for conversation tracking.
@@ -221,7 +265,7 @@ class MultiModalRAG:
         5. Any comparison benchmarks included
         6. Any legends or color coding that indicates different assets or categories
         7. Any annotations or callouts highlighting specific financial events
-        
+        8. The generated description is used to compare various funds and their performance.
         For financial data visualization, precision is essential. Provide exact figures where visible.
         """
         messages = [
@@ -266,7 +310,7 @@ class MultiModalRAG:
                 for i, summary in enumerate(self.text_summaries)
             ]
             self.retriever.vectorstore.add_documents(summary_texts)
-            self.retriever.docstore.mset(list(zip(doc_ids, self.texts)))
+            self.retriever.docstore.mset(list(zip(doc_ids,self.serialize_documents(self.texts))))
             print(f"Indexed {len(doc_ids)} texts")
         
         # Add tables (only if there are any)
@@ -335,22 +379,54 @@ class MultiModalRAG:
         
         # Construct prompt with history
         prompt_template = f"""
-        Answer the question based only on the following context, which can include text, tables, and images.
+            Answer the question based only on the following context, which can include text, tables, and images.
 
-        Previous conversation:
-        {history_text}
-        
-        Context: {context_text}
-        
-        Current question: {user_question}
-        
-        Use the conversation history if required but the aswere should be based on the context provided.
-        If you don't know the answer based on the provided context, say so.
-        """
-        
+            Response format must follow this structure:
+            1. Answer:
+            - A direct and complete answer based strictly on the provided context.
+            2. JSON Format of the Answer:
+            {{
+                "answer": <string>,
+                "details": <dict containing key information from the context>
+            }}
+            3. Comparison (if applicable):
+            - If the answer includes any comparison of data points, include a comparison block in JSON format:
+            {{
+                "comparison": {{
+                    "compared_values": <list of compared items>,
+                    "basis": <on what basis comparison is made>,
+                    "result": <summary of comparison>
+                }}
+            }}
+            4. Suggested Graph:
+            - If data allows for visual representation (comparison, trends, proportions), return a suggested graph type and its details:
+            {{
+                "graph": {{
+                    "title": "<suitable graph title>",
+                    "type": "<bar|line|pie|scatter|other>",
+                    "x_axis": <list of labels or categories>,
+                    "y_axis": <list of corresponding values>,
+                    "description": "Brief explanation of why this graph type fits the data"
+                }}
+            }}
+
+            Rules:
+            - Provide all values exactly as found in the context. Do NOT shorten or paraphrase any values.
+            - Use the conversation history only when relevant.
+            - If the answer cannot be determined based on the provided context, say so.
+
+            Previous conversation:
+            {history_text}
+
+            Context:
+            {context_text}
+
+            Current question:
+            {user_question}
+            """
         prompt_content = [{"type": "text", "text": prompt_template}]
-        
-        # Add images to prompt if available
+
+                    # Add images to prompt if available
         if len(docs_by_type["images"]) > 0:
             for image in docs_by_type["images"]:
                 prompt_content.append(
