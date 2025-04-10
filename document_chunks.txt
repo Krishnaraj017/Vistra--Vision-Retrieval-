@@ -1,82 +1,39 @@
-The Canara Robeco Savings Fund (CRSF) is a moderate risk investment product suitable for investors seeking income and capital appreciation through a low duration strategy. The fund invests in debt and money market instruments with a Macaulay duration of 6-12 months. The scheme riskometer is Low to Moderate. The fund offers various plans, including Daily, Weekly, and Monthly Reinvestment and Payout options, as well as a Growth Option. There is no entry or exit load, and the expense ratio is 0.63% for the Regular Plan and 0.32% for the Direct Plan. The fund is benchmarked against the CRISIL Low Duration Debt A-I Index and is managed by Mr. Kunal Jain and Mr. Avnish Jain, who have 17 and 30 years of experience, respectively, and have been managing the fund since July 18, 2022, and April 1, 2022, respectively.
-This Low Duration Fund is an open-ended debt scheme investing in debt and money market instruments with a Macaulay duration of 6-12 months, offering relatively low interest rate risk and moderate credit risk. The scheme aims to generate income and capital appreciation, but there is no assurance of achieving this objective. As of February 28, 2025, the fund's details are: Month-end AUM is ₹770.34 Crores, Monthly AVG AUM is ₹800.96 Crores, and NAVs are ₹10.2600 (Regular Plan - Daily IDCW), ₹42.0640 (Direct Plan - Daily IDCW), ₹40.9657 (Regular Plan - Growth Option), ₹36.6952 (Regular Plan - IDCW), and ₹37.5863 (Direct Plan - IDCW). The fund offers Direct Plan options with weekly reinvestment of income, monthly payout of income distribution, and growth options.
-Canara Robeco Savings Fund is an open-ended low duration debt scheme that aims to generate accrual income from investments in money market and debt securities, suitable for investors seeking a lower risk strategy with a Macaulay duration between 6 months and 12 months. The fund has two plans: Direct Plan and Regular Plan. The Monthly IDCW (payout/reinvestment) for Direct Plan is ₹10.2630, while for Regular Plan it is ₹10.2629. The Weekly IDCW (payout/reinvestment) for Regular Plan is ₹10.2630, and for Direct Plan it is also ₹10.2630. The fund was allotted on March 4, 2005, and its asset allocation is Debt & Money Market Instruments (0% to 100%, Low to Medium risk) and Reits/Invits (0% to 10%, Medium to High risk). The quantitative information includes an Annualised Portfolio YTM of 7.58%, Modified Duration of 0.74 Years, Residual Maturity of 0.84 Years, and Macaulay Duration of 0.79 Years.
-The PRC Matrix outlines the risk profile of a debt fund with a benchmark riskometer rating of CRISIL Low Duration Debt A-I Index. The asset allocation is: 4.43% in tri-party repo/REPO/reverse repo and net current assets, 28.05% in certificates of deposit, 61.15% in AAA and equivalent rated instruments, 6.00% in treasury bills/sovereign, and 0.37% in unit funds. The maturity profile is: 1.99% in 0-3 months, 23.70% in 3-6 months, 48.03% in 6-12 months, 22.80% in 1-2 years, and 0.67% in greater than 2 years. The minimum investment is ₹5000 and in multiples of ₹1 thereafter, with subsequent purchases and systematic investment plans (SIP) having varying minimum amounts and frequencies. Systematic transfer plans (STP) and systematic withdrawal plans (SWP) also have specific minimum amounts and frequencies.
-The investment plan has different frequencies and minimum investment amounts: quarterly frequency requires a minimum investment of ₹2,000 and in multiples of ₹1 thereafter, while annual frequency requires a minimum investment of ₹2,000 and in multiples of ₹1 thereafter. There are several plan options, including reinvestment of income distribution cum capital withdrawal, payout of income distribution cum capital withdrawal, daily/weekly/monthly reinvestment or payout of income distribution cum capital withdrawal. The portfolio consists of debt instruments (61.14% of NAV), including HDB Financial Services Ltd, Bajaj Housing Finance Ltd, Power Finance Corporation Ltd, REC Ltd, and others, with AAA ratings from CRISIL or ICRA. The portfolio also includes government securities (6.00% of NAV), alternative investment funds (0.37% of NAV), and money market instruments (30.86% of NAV), including HDFC Bank Ltd, Kotak Mahindra Bank Ltd, Axis Bank Ltd, and others, with A1+ ratings from CARE, CRISIL, or ICRA.
-The table presents information about two Direct Plan options for a Growth Option investment. The first option, Reinvestment of Income Distribution cum Capital Withdrawal Option, has a Grand Total (Net Asset) of 100.00. The second option, Payout of Income Distribution cum Capital Withdrawal Option, has a value of 24$. The table also notes that the expense ratios mentioned include GST on investment management fees, and refers to page 59 for definitions and disclaimers.
-Here's a detailed description of the financial chart:
+The table provides a snapshot of equity schemes and hybrid/other schemes as of February 28, 2025. The schemes include Canara Robeco Flexicap, Blue Chip, Emerging, Infrastructure, Consumer Trends, and Small Cap Funds. Key details for each scheme are:
 
-1.  **Type of Chart:** The chart is a gauge or speedometer-style chart, often referred to as a "riskometer."
+* Assets Under Management (AUM) in crores: Flexicap (11,392.75), Blue Chip (13,859.23), Emerging (21,405.99), Infrastructure (726.19), Consumer Trends (1,583.20), and Small Cap (10,272.59)
+* Standard Deviation: Flexicap (13.75), Blue Chip (12.71), Emerging (14.90), Infrastructure (18.73), Consumer Trends (14.33), and Small Cap (17.07)
+* Beta: Flexicap (0.90), Blue Chip (0.88), Emerging (0.92), Infrastructure (0.63), Consumer Trends (0.91), and Small Cap (0.78)
+* Sharpe Ratio: Flexicap (0.29), Blue Chip (0.42), Emerging (0.41), Infrastructure (0.68), Consumer Trends (0.57), and Small Cap (0.42)
+* R-Squared: Flexicap (0.96), Blue Chip (0.97), Emerging (0.92), Infrastructure (0.67), Consumer Trends (0.81), and Small Cap (0.93)
+* Portfolio Turnover Ratio: Flexicap (0.3), Blue Chip (0.25), Emerging (0.64), Infrastructure (0.37), Consumer Trends (0.22), and Small Cap (0.26)
+* Benchmark: Flexicap (BSE 500 TRI), Blue Chip (BSE 100 TRI), Emerging (NIFTY Large Midcap 250 TRI), Infrastructure (BSE India Infrastructure TRI), Consumer Trends (NIFTY Consumption & Finance Theme), and Small Cap (BSE Nifty Smallcap 100 TRI)
+* Fund Managers: Flexicap (Mr. Shridatta Bhandwaldar), Blue Chip (Mr. Shridatta Bhandwaldar), Emerging (Mr. Amit Nadekar and Mr. Shridatta Bhandwaldar), Infrastructure (Mr. Vishal Mishra and Mr. Shridatta Bhandwaldar), Consumer Trends (Ms. Ennette Fernandes and Mr. Pranav Gokhale), and Small Cap (Mr. Shridatta Bhandwaldar and Mr. Pranav Gokhale)
+The table provides information about various schemes offered by Canara Robeco, including equity schemes, hybrid schemes, and others. Here is a summary of the key points:
 
-2.  **Title and Data:** The chart is titled "BENCHMARK RISKOMETER." It displays the risk level associated with a benchmark, likely for comparison against a specific fund's risk.
+Equity Schemes:
 
-3.  **Time Period:** The chart does not explicitly show a time period. It represents a snapshot of the risk level at a given point in time.
+* Canara Robeco Focused Fund: AUM - 2,270.35 Cr, Standard Deviation - 13.63, Beta - 0.87, Sharpe - 0.51, R-Squared - 0.92, Benchmark - BSE 500 TRI, Fund Manager - Mr. Shridatta Bhandwaldar
+* Canara Robeco Value Fund: AUM - 1,110.53 Cr, Standard Deviation - 13.93, Beta - 0.90, Sharpe - 0.70, R-Squared - 0.95, Benchmark - BSE 500 TRI, Fund Manager - Mr. Vishal Mishra
+* Canara Robeco Mid Cap Fund: AUM - 2,402.46 Cr, Benchmark - BSE 150 Mid Cap TRI, Fund Manager - Mr. Pranav Gokhale
+* Canara Robeco Multi Cap Equity Fund: AUM - 3,530.12 Cr, Benchmark - NIFTY 500 Multicap 50:25:25 Index TRI, Fund Manager - Mr. Shridatta Bhandwaldar
+* Canara Robeco Manufacturing ELSS Fund: AUM - 1,397.44 Cr, Standard Deviation - 13.84, Beta - 0.90, Sharpe - 0.33, R-Squared - 0.96, Benchmark - Nifty India Manufacturing TRI, Fund Manager - Mr. Pranav Gokhale
+* Canara Robeco Tax Saver ELSS Fund: AUM - 7,724.51 Cr, Benchmark - BSE 500 TRI, Fund Manager - Mr. Shridatta Bhandwaldar
 
-4.  **Numerical Values/Trends:** The chart does not display specific numerical values. Instead, it uses color-coded segments to represent different risk levels. The needle points to a specific risk level.
+Exit Load for Equity Schemes:
 
-5.  **Comparison Benchmarks:** The chart itself *is* the benchmark. It's designed to be compared against the risk level of a specific fund.
+* 1% if redeemed/switched out within 1 year from the date of allotment
+* Nil if redeemed/switched out after 1 year from the date of allotment
 
-6.  **Legends/Color Coding:** The chart uses the following color-coded risk levels:
-    *   Green: "Low Risk" and "Low to Moderate Risk"
-    *   Yellow: "Moderate Risk"
-    *   Brown: "Moderately High Risk"
-    *   Orange: "High Risk"
-    *   Red: "Very High Risk"
+Hybrid & Other Schemes:
 
-7.  **Annotations/Callouts:** There are no specific annotations or callouts highlighting financial events. The chart is a static representation of risk level.
+* Canara Robeco Conservative Hybrid Fund: AUM - 916.55 Cr, Standard Deviation - 3.88, Beta - 1.04, Sharpe - -0.02, R-Squared - 0.85, Benchmark - CRISIL Hybrid 85+15-Conservative Index, Fund Manager - Mr. Avnish Jain (For Debt Portfolio) and Ms. Ennette Fernandes (For Equity Portfolio)
+* Canara Robeco Equity Hybrid Fund: AUM - 9,852.75 Cr, Standard Deviation - 10.52, Beta - 1.04, Sharpe - 0.26, R-Squared - 0.95, Benchmark - CRISIL Hybrid 35+65 - Aggressive Index, Fund Manager - Mr. Amit Kadam (For Equity Portfolio) and Mr. Avnish Jain (For Debt Portfolio)
+* Canara Robeco Balanced Advantage Fund: AUM - 1,372.71 Cr, Benchmark - CRISIL Hybrid 50+50 - Moderate Index, Fund Manager - Mr. Shridatta Bhandwaldar, Ms. Ennette Fernandes, and Ms. Suman Prasad
 
-8.  **Needle Position:** The needle is pointing towards the "Low to Moderate Risk" area. This indicates that the benchmark has a risk level in the low to moderate range.
-Okay, here's a detailed description of the financial charts and tables presented in the image:
+Exit Load for Hybrid & Other Schemes:
 
-**1. Benchmark Riskometer**
+* Canara Robeco Conservative Hybrid Fund: Nil for any redemption/switch out upto 10% of units within 1 year from the date of allotment, 1% of for any redemption/switch out more than 10% of units within 1 year from the date of allotment, Nil for any redemption/switch out after 1 year from the date of allotment
+* Canara Robeco Equity Hybrid Fund: Same as above
+* Canara Robeco Balanced Advantage Fund: 1% if redeemed/switched out above 12% allotted units within 365 days from the date of allotment, Nil if redeemed/switched out upto 12% of allotted units within 365 days from the date of allotment, Nil if redeemed/switched out after 365 days from the date of allotment
+There is no table or text provided for me to summarize. Please provide the table or text chunk, and I'll be happy to assist you with a concise and detailed summary.
 
-*   **Type:** Dial Gauge
-*   **Title:** Benchmark Riskometer
-*   **Data:** Indicates the risk level of the benchmark (CRISIL Low Duration Debt A-I Index).
-*   **Risk Level:** The needle points to "Low to Moderate".
-
-**2. Rating Profile**
-
-*   **Type:** Pie Chart
-*   **Title:** Rating Profile (% to net assets)
-*   **Data:** Shows the distribution of the fund's assets based on credit ratings.
-*   **Categories and Values:**
-    *   Tri-party repo/REPO/Reverse Repo & Net Current Assets: 4.43% (Purple)
-    *   AAA & Equivalent: 61.15% (Teal)
-    *   A1+ & Equivalent: 28.05% (Magenta)
-    *   Treasury Bills/Sovereign: 6.00% (Orange)
-    *   Unit Funds: 0.37% (Yellow)
-
-**3. Asset Allocation**
-
-*   **Type:** Pie Chart
-*   **Title:** Asset Allocation (% to net assets)
-*   **Data:** Shows the distribution of the fund's assets across different asset classes.
-*   **Categories and Values:**
-    *   Tri-party repo/REPO/Reverse Repo & Net Current Assets: 4.43% (Purple)
-    *   Certificate Of Deposit: 28.05% (Teal)
-    *   NCDs/Bonds: 61.15% (Orange)
-    *   Treasury Bills/Sovereign: 6.00% (Green)
-    *   Unit Funds: 0.37% (Yellow)
-
-**4. Maturity Profile**
-
-*   **Type:** Table
-*   **Title:** Maturity Profile
-*   **Data:** Shows the distribution of the fund's assets based on their maturity periods.
-*   **Categories and Values:**
-    *   Net Current Assets/CDMDF: 1.99%
-    *   0 to 3 Months: 2.81%
-    *   3 to 6 Months: 23.70%
-    *   6 to 12 Months: 48.03%
-    *   1-2 years: 22.80%
-    *   Greater than 2 years: 0.67%
-
-**General Observations:**
-
-*   The charts and table provide a snapshot of the fund's risk profile, asset allocation, and maturity structure.
-*   The "Rating Profile" indicates a significant portion of the fund is invested in AAA & Equivalent rated assets.
-*   The "Asset Allocation" shows a large allocation to NCDs/Bonds.
-*   The "Maturity Profile" reveals that a substantial portion of the fund's assets mature within 6-12 months.
-*   There is no time period specified for the data presented, so it is assumed to be a current snapshot.
-*   There are no annotations or callouts highlighting specific financial events.

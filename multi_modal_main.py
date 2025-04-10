@@ -20,6 +20,8 @@ from langchain_groq import ChatGroq
 from langchain_google_genai import ChatGoogleGenerativeAI
 import torch
 
+
+
 # LangGraph imports for memory
 from langgraph.graph import MessagesState
 
@@ -122,14 +124,15 @@ class MultiModalRAG:
         #     print("Falling back to InMemoryStore")
         #     self.store = InMemoryStore()
 
-        # self.store = InMemoryStore()
         # conn = sqlite3.connect("./rag_data.db")
-        self.store = SQLStore(
-            namespace="multi_modal_rag_documents",
-            db_url="sqlite:///./rag_data.db",  # SQLite database file
-            # engine_kwargs={"pool_size": 5},  # Optional connection pool settings
-        )
-        self.store.create_schema()
+        # self.store = SQLStore(
+        #     namespace="multi_modal_rag_documents",
+        #     db_url="sqlite:///./rag_data.db",  # SQLite database file
+        #     # engine_kwargs={"pool_size": 5},  # Optional connection pool settings
+        # )
+        # self.store.create_schema()
+
+        self.store = InMemoryStore()
 
         self.id_key = "doc_id"
         
@@ -180,7 +183,7 @@ class MultiModalRAG:
             filename=file_path,
             infer_table_structure=True,
             strategy="hi_res",
-            extract_image_block_types=["Image"],
+            extract_image_block_types=["Image","Table"],
             extract_image_block_to_payload=True,
             chunking_strategy=chunking_strategy,
             max_characters=max_characters,
@@ -310,7 +313,7 @@ class MultiModalRAG:
                 for i, summary in enumerate(self.text_summaries)
             ]
             self.retriever.vectorstore.add_documents(summary_texts)
-            self.retriever.docstore.mset(list(zip(doc_ids,self.serialize_documents(self.texts))))
+            self.retriever.docstore.mset(list(zip(doc_ids,self.texts)))
             print(f"Indexed {len(doc_ids)} texts")
         
         # Add tables (only if there are any)
@@ -381,39 +384,69 @@ class MultiModalRAG:
         prompt_template = f"""
             Answer the question based only on the following context, which can include text, tables, and images.
 
-            Response format must follow this structure:
-            1. Answer:
-            - A direct and complete answer based strictly on the provided context.
-            2. JSON Format of the Answer:
+            Your response MUST be a single JSON object with the following structure:
             {{
-                "answer": <string>,
-                "details": <dict containing key information from the context>
-            }}
-            3. Comparison (if applicable):
-            - If the answer includes any comparison of data points, include a comparison block in JSON format:
-            {{
+                "answer": "A direct and complete answer based strictly on the provided context",
+                "details": {{
+                    "key_points": ["List of key information extracted from context"],
+                    "source_references": ["Any reference identifiers found in context"]
+                }},
+                "table_analysis": {{
+                    "structure": "Description of table structure or null if no table present",
+                    "headers": ["List of table headers or null if no table"],
+                    "row_count": "Number of data rows or null if no table",
+                    "key_metrics": ["Important metrics extracted from table"],
+                    "patterns": ["Patterns or trends observed in tabular data"],
+                    "raw_table": {{
+                        "columns": ["Column names exactly as presented in the table"],
+                        "data": [
+                            ["Row 1 values in order of columns"],
+                            ["Row 2 values in order of columns"],
+                            ["And so on..."]
+                        ]
+                    }}
+                }},
                 "comparison": {{
-                    "compared_values": <list of compared items>,
-                    "basis": <on what basis comparison is made>,
-                    "result": <summary of comparison>
-                }}
-            }}
-            4. Suggested Graph:
-            - If data allows for visual representation (comparison, trends, proportions), return a suggested graph type and its details:
-            {{
-                "graph": {{
-                    "title": "<suitable graph title>",
-                    "type": "<bar|line|pie|scatter|other>",
-                    "x_axis": <list of labels or categories>,
-                    "y_axis": <list of corresponding values>,
-                    "description": "Brief explanation of why this graph type fits the data"
+                    "compared_values": ["List of compared items or null if not applicable"],
+                    "basis": "On what basis comparison is made or null if not applicable",
+                    "result": "Summary of comparison or null if not applicable",
+                    "graph_type": "multi_comparison|single_comparison|trend_analysis|null"
+                }},
+                "visualization": {{
+                    "visualizations": [
+                        {{
+                            "title": "Suitable graph title",
+                            "type": "bar|line|pie|scatter|stacked_bar|radar|bubble|heatmap|table",
+                            "x_axis": ["List of labels or categories"],
+                            "y_axis": ["List of corresponding values"],
+                            "data_labels": ["Optional labels for data points"],
+                            "y_series": [
+                                {{"name": "Series name", "values": [series values]}},
+                                {{"name": "Series name", "values": [series values]}}
+                            ],
+                            "table_data": {{
+                                "headers": ["Column headers for table visualization"],
+                                "rows": [
+                                    ["Row 1 values"],
+                                    ["Row 2 values"]
+                                ]
+                            }},
+                            "description": "Brief explanation of why this visualization type fits the data"
+                        }}
+                        // Additional visualization objects can be added here
+                    ]
                 }}
             }}
 
             Rules:
+            - Return ONLY the JSON object, with no additional text before or after.
+            - Every property must be populated, use null for inapplicable properties.
             - Provide all values exactly as found in the context. Do NOT shorten or paraphrase any values.
+            - For tables: preserve exact cell values, maintain row/column relationships, and capture all table content completely.
+            - For tables: include the raw_table property with the exact structure and values from the original table.
+            - For tabular data: identify patterns, summarize distributions, calculate totals/averages when relevant.
             - Use the conversation history only when relevant.
-            - If the answer cannot be determined based on the provided context, say so.
+            - If the answer cannot be determined based on the provided context, set "answer" to "Unable to determine from provided context" and use null for all other fields.
 
             Previous conversation:
             {history_text}

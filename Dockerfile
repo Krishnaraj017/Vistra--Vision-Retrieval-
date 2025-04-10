@@ -1,5 +1,4 @@
-FROM python:3.11-slim
-
+FROM python:3.11-slim-
 # Install system dependencies for OpenCV, graphics, and unstructured
 RUN apt-get update && apt-get install -y \
     # Graphics and OpenCV dependencies
