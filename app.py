@@ -41,6 +41,24 @@ class RAGResponse(BaseModel):
     images: Optional[List[ImageResponse]] = None
     sources: Optional[Dict[str, Any]] = None
 
+def make_serializable(obj):
+    """Convert unstructured document elements to serializable dictionaries."""
+    from unstructured.documents.elements import Element, CompositeElement
+    
+    if isinstance(obj, CompositeElement) or isinstance(obj, Element):
+        # Convert Element objects to dictionaries with their relevant attributes
+        return {
+            "element_type": obj.__class__.__name__,
+            "text": str(obj),
+            "metadata": obj.metadata.to_dict() if hasattr(obj, "metadata") else {}
+        }
+    elif isinstance(obj, list):
+        return [make_serializable(item) for item in obj]
+    elif isinstance(obj, dict):
+        return {k: make_serializable(v) for k, v in obj.items()}
+    else:
+        return obj
+
 # Extend the MultiModalRAG class with a method to retrieve relevant images
 def get_relevant_images(rag_instance, question, docs_retrieved):
     """
@@ -110,7 +128,7 @@ async def ask_question(request: QuestionRequest):
             text_response = raw_result["response"]
             
             # Get the retrieved documents
-            retrieved_docs = raw_result["context"]["texts"]
+            retrieved_docs = raw_result["context"]["texts"] if isinstance(raw_result["context"], dict) and "texts" in raw_result["context"] else []
             retrieved_raw = [doc for doc in raw_result["context"] if isinstance(doc, str)]
             
             # Get relevant images if requested
@@ -122,6 +140,9 @@ async def ask_question(request: QuestionRequest):
                         ImageResponse(data=img) for img in relevant_images
                     ]
             
+            # Make context serializable before returning
+            serializable_context = make_serializable(raw_result["context"]) if request.return_sources else None
+            
             # Update memory with the exchange
             rag._save_to_memory(request.question, text_response)
             
@@ -129,7 +150,7 @@ async def ask_question(request: QuestionRequest):
             response = RAGResponse(
                 text_response=text_response,
                 images=images_data,
-                sources=raw_result["context"] if request.return_sources else None
+                sources=serializable_context
             )
             
             return response
@@ -164,4 +185,3 @@ async def list_images():
 if __name__ == "__main__":
     import uvicorn
     uvicorn.run(app, host="0.0.0.0", port=8000)
-
