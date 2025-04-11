@@ -39,9 +39,7 @@ class MultiModalRAG:
         groq_api_key=None,
         google_api_key=None,
         output_path="./content/",
-        mongodb_uri="mongodb://localhost:27017/",
-        mongodb_db="rag_db",
-        mongodb_collection="documents"
+      
 
     ):
         """
@@ -105,7 +103,7 @@ class MultiModalRAG:
         self.vectorstore = Chroma(
             collection_name="multi_modal_rag", 
             embedding_function=self.embedding_function,
-            persist_directory="./chroma_store"  # or some permanent path
+            # persist_directory="./chroma_store"  # or some permanent path
         )
         # try:
         #     # Create MongoDB client
@@ -379,14 +377,14 @@ class MultiModalRAG:
                     history_text += f"Human: {message.content}\n"
                 elif isinstance(message, AIMessage):
                     history_text += f"AI: {message.content}\n"
-        
+        print(context_text)
         # Construct prompt with history
         prompt_template = f"""
             Answer the question based only on the following context, which can include text, tables, and images.
 
             Your response MUST be a single JSON object with the following structure:
             {{
-                "answer": "A direct and complete answer based strictly on the provided context",
+                "answer": "A direct and complete in detail answer based strictly on the provided context",
                 "details": {{
                     "key_points": ["List of key information extracted from context"],
                     "source_references": ["Any reference identifiers found in context"]
