@@ -21,8 +21,17 @@ from langchain_google_genai import ChatGoogleGenerativeAI
 import torch
 
 from multi_modal_main import MultiModalRAG
+from fastapi.middleware.cors import CORSMiddleware  # Add this import at the top
 
 app = FastAPI()
+# Add CORS middleware
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],  # Allows all  origins - for development only!
+    allow_credentials=True,
+    allow_methods=["*"],  # Allows all methods
+    allow_headers=["*"],  # Allows all headers
+)
 
 # Initialize the MultiModalRAG instance
 rag = MultiModalRAG()
