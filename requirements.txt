@@ -17,3 +17,4 @@ pi-heif
 unstructured-inference
 pdf2image
 nltk
+PyPDF2 

@@ -83,7 +83,7 @@ def main():
         with st.chat_message("assistant"):
             with st.spinner("Processing..."):
                 response = ask_question(prompt, False, False)
-                
+                print(response)
                 # Display text response
                 st.write(response["text_response"])
                 
@@ -145,6 +145,8 @@ def ask_question(question, return_sources=False, return_images=True):
         )
         
         if response.status_code == 200:
+            print("___________________________________")
+            print(response)
             return response.json()
         else:
             st.error(f"Error processing question: {response.text}")
@@ -190,4 +192,4 @@ def view_all_images():
 
 if __name__ == "__main__":
     main()
-    
+

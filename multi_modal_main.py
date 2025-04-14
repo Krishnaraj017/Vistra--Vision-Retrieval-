@@ -103,6 +103,7 @@ class MultiModalRAG:
         self.vectorstore = Chroma(
             collection_name="multi_modal_rag", 
             embedding_function=self.embedding_function,
+            # persist_directory="./chroma_store",  # or some permanent path
             # persist_directory="./chroma_store"  # or some permanent path
         )
         # try:
@@ -123,11 +124,13 @@ class MultiModalRAG:
         #     self.store = InMemoryStore()
 
         # conn = sqlite3.connect("./rag_data.db")
+
         # self.store = SQLStore(
         #     namespace="multi_modal_rag_documents",
         #     db_url="sqlite:///./rag_data.db",  # SQLite database file
         #     # engine_kwargs={"pool_size": 5},  # Optional connection pool settings
         # )
+
         # self.store.create_schema()
 
         self.store = InMemoryStore()
@@ -291,14 +294,14 @@ class MultiModalRAG:
               f"{len(self.table_summaries)} table summaries, and "
               f"{len(self.image_summaries)} image descriptions")
         
-        file_path = "document_chunks.txt"
-        # write splits into the file
-        with open(file_path, "w", encoding="utf-8") as f:
-            # Extract the text content from each document object
-            text_contents = self.text_summaries # Adjust attribute if needed
-            image_contents = self.image_summaries
-            f.write("\n".join(text_contents) + "\n")
-            f.write("\n".join(image_contents) + "\n")
+        # file_path = "document_chunks.txt"
+        # # write splits into the file
+        # with open(file_path, "w", encoding="utf-8") as f:
+        #     # Extract the text content from each document object
+        #     text_contents = self.text_summaries # Adjust attribute if needed
+        #     image_contents = self.image_summaries
+        #     f.write("\n".join(text_contents) + "\n")
+        #     f.write("\n".join(image_contents) + "\n")
         return self
 
     def index_content(self):
@@ -431,7 +434,6 @@ class MultiModalRAG:
                             }},
                             "description": "Brief explanation of why this visualization type fits the data"
                         }}
-                        // Additional visualization objects can be added here
                     ]
                 }}
             }}
@@ -445,6 +447,8 @@ class MultiModalRAG:
             - For tabular data: identify patterns, summarize distributions, calculate totals/averages when relevant.
             - Use the conversation history only when relevant.
             - If the answer cannot be determined based on the provided context, set "answer" to "Unable to determine from provided context" and use null for all other fields.
+            - Remove all newline characters (`\\n`) and triple quotes (`\"\"\"`) from the JSON output.
+            - Ensure the JSON output is compact (no unnecessary whitespace) and properly escaped.
 
             Previous conversation:
             {history_text}
