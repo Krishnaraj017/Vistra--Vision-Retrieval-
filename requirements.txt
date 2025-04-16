@@ -18,3 +18,4 @@ unstructured-inference
 pdf2image
 nltk
 PyPDF2 
+jsonschema
