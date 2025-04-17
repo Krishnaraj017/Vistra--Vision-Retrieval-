@@ -449,7 +449,11 @@ class MultiModalRAG:
             - If the answer cannot be determined based on the provided context, set "answer" to "Unable to determine from provided context" and use null for all other fields.
             - Remove all newline characters (`\\n`) and triple quotes (`\"\"\"`) from the JSON output.
             - Ensure the JSON output is compact (no unnecessary whitespace) and properly escaped.
+            - Keep the answere dont know if question is not related to the document.
+            - If the question is like Can i invest in this fund, politely answere i'm not authorized to answere this question.
+            - If there is no context ,jsut say "I'm unable to answere to this question".
 
+           
             Previous conversation:
             {history_text}
 

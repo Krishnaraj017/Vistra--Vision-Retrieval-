@@ -146,7 +146,7 @@ async def ask_question(request: QuestionRequest):
             
             # Update memory with the exchange
             rag._save_to_memory(request.question, text_response)
-            
+            print(f"Updated memory with question: {request.question} and response: {text_response}")
             # Prepare the response
             response = RAGResponse(
                 text_response=text_response,
